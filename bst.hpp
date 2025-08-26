@@ -44,6 +44,33 @@ private:
 		left_right->parent = this;
 	}
 
+	/// @brief Search for a data item at this node and the ones below it.
+	/// @param data Data item to search for.
+	/// @return The matching node if one was found, else `nullptr`.
+	BSTNode<T> *find(T data)
+	{
+		// data > this->data => search right
+		if (data > this->data)
+		{
+			if (right)
+				return right->find(data);
+			else
+				return nullptr;
+		}
+
+		// data < this->data => search left
+		else if (data < this->data)
+		{
+			if (left)
+				return left->find(data);
+			else
+				return nullptr;
+		}
+
+		// data == this.data
+		return this;
+	}
+
 public:
 	/// @brief Create a new node.
 	/// @param data Data to store in the node.
@@ -76,33 +103,6 @@ public:
 				CHECK_ALLOC(right);
 			}
 		}
-	}
-
-	/// @brief Search for a data item at this node and the ones below it.
-	/// @param data Data item to search for.
-	/// @return The matching node if one was found, else `nullptr`.
-	BSTNode<T> *find(T data)
-	{
-		// data > this->data => search right
-		if (data > this->data)
-		{
-			if (right)
-				return right->find(data);
-			else
-				return nullptr;
-		}
-
-		// data < this->data => search left
-		else if (data < this->data)
-		{
-			if (left)
-				return left->find(data);
-			else
-				return nullptr;
-		}
-
-		// data == this.data
-		return this;
 	}
 
 	/// @brief Search for a data item at this node and the ones below it.
