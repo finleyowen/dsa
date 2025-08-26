@@ -8,6 +8,7 @@
 template <typename T>
 class AVL : public BST<T>
 {
+public:
 	/// @brief Overridden insertion method to ensure tree is AVL-
 	/// balanced after the insertion.
 	/// @param data Data to insert onto the tree.
