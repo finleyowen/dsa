@@ -18,6 +18,32 @@ private:
 	/// @brief Pointer to the parent node.
 	BSTNode<T> *parent;
 
+	/// @brief Perform an AVL left-rotation on this node and
+	/// its right child.
+	void avl_rotate_l()
+	{
+		BSTNode *right_left = right->left;
+
+		right->parent = parent;
+		right->left = this;
+		right = right_left;
+		parent = right;
+		right_left->parent = this;
+	}
+
+	/// @brief Perform an AVL right-rotation on this node and
+	/// its left child.
+	void avl_rotate_r()
+	{
+		BSTNode *left_right = left->right;
+
+		left->parent = parent;
+		left->right = this;
+		left = left_right;
+		parent = left;
+		left_right->parent = this;
+	}
+
 public:
 	/// @brief Create a new node.
 	/// @param data Data to store in the node.
@@ -114,32 +140,6 @@ public:
 		unsigned int rh = right ? right->height_below() : 0;
 
 		return lh - rh;
-	}
-
-	/// @brief Perform an AVL left-rotation on this node and
-	/// its right child.
-	void avl_rotate_l()
-	{
-		BSTNode *right_left = right->left;
-
-		right->parent = parent;
-		right->left = this;
-		right = right_left;
-		parent = right;
-		right_left->parent = this;
-	}
-
-	/// @brief Perform an AVL right-rotation on this node and
-	/// its left child.
-	void avl_rotate_r()
-	{
-		BSTNode *left_right = left->right;
-
-		left->parent = parent;
-		left->right = this;
-		left = left_right;
-		parent = left;
-		left_right->parent = this;
 	}
 
 	/// @brief Perform AVL rotations on the node until it is balanced.
