@@ -21,7 +21,7 @@ namespace BSTTest
 		return bst;
 	}
 
-	/// @brief Test the search method
+	/// @brief Test the `search` method
 	void test_search()
 	{
 		BST<int> *bst = get_test_data();

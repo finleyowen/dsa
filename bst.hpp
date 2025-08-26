@@ -184,6 +184,13 @@ public:
 	/// @brief Create a new, empty BST.
 	BST() : root(nullptr) {}
 
+	/// @brief Get the root node of the tree.
+	/// @return The root node of the tree. May be `nullptr`.
+	BSTNode<T> *get_root()
+	{
+		return root;
+	}
+
 	/// @brief Insert an item into this BST.
 	/// @param data Data item to insert.
 	virtual void insert(T data)

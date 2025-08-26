@@ -21,7 +21,7 @@ namespace AVLTest
 		return avl;
 	}
 
-	/// @brief Test the search method
+	/// @brief Test the `search` method.
 	void test_search()
 	{
 		AVL<int> *avl = get_test_data();
@@ -38,10 +38,29 @@ namespace AVLTest
 		delete avl;
 	}
 
+	/// @brief Test the `avl_balance` method.
+	void test_balance()
+	{
+		AVL<int> *avl = new AVL<int>();
+		CHECK_ALLOC(avl);
+
+		avl->insert(1);
+		avl->insert(2);
+		avl->insert(3);
+		avl->insert(4);
+		avl->insert(5);
+
+		int bf = avl->get_root()->avl_balance_factor();
+		assert(-1 < bf && bf < 1);
+
+		delete avl;
+	}
+
 	/// @brief Run all the tests
 	void all()
 	{
 		test_search();
+		test_balance();
 	}
 }
 
