@@ -6,7 +6,7 @@
 /// @brief Represents an AVL tree. Extends the `BST` class.
 /// @tparam T The data type of the data items stored on the tree.
 template <typename T>
-struct AVL : public BST<T>
+class AVL : public BST<T>
 {
 	/// @brief Overridden insertion method to ensure tree is AVL-
 	/// balanced after the insertion.
