@@ -1,8 +1,8 @@
 #ifndef __AVLTEST_HPP__
 #define __AVLTEST_HPP__
 
-#include "../avl.hpp"
-#include <cassert>
+#include "../avl.hpp" // for AVL
+#include <cassert>	  // for assert
 
 namespace AVLTest
 {
@@ -49,7 +49,14 @@ namespace AVLTest
 		avl->insert(3);
 		avl->insert(4);
 		avl->insert(5);
+		avl->insert(6);
+		avl->insert(7);
+		avl->insert(8);
 
+		// the height should be log_2(8) = 3.
+		assert(avl->get_root()->height_below() <= 3);
+
+		// the balance factor of every node should be between -1 and 1.
 		int bf = avl->get_root()->avl_balance_factor();
 		assert(-1 < bf && bf < 1);
 

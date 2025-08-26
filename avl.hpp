@@ -1,7 +1,7 @@
 #ifndef __AVL_HPP__
 #define __AVL_HPP__
 
-#include "bst.hpp"
+#include "bst.hpp" // for BST, CHECK_ALLOC
 
 /// @brief Represents an AVL tree. Extends the `BST` class.
 /// @tparam T The data type of the data items stored on the tree.

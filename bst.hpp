@@ -1,7 +1,7 @@
 #ifndef __BST_HPP__
 #define __BST_HPP__
 
-#include "check_alloc.hpp"
+#include "check_alloc.hpp" // for CHECK_ALLOC
 
 /// @brief Represents a node in a Binary Search Tree (BST).
 /// @tparam T The data type stored in the BST.
