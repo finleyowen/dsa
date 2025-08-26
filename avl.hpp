@@ -10,7 +10,7 @@ struct AVL : public BST<T>
 {
 	/// @brief Overridden insertion method to ensure tree is AVL-
 	/// balanced after the insertion.
-	/// @param data Data to insert into the tree.
+	/// @param data Data to insert onto the tree.
 	void insert(T data) override
 	{
 		BST<T>::insert(data);

@@ -3,7 +3,7 @@
 
 #include "check_alloc.hpp" // for CHECK_ALLOC
 
-/// @brief Represents a node in a Binary Search Tree (BST).
+/// @brief Represents a node on a Binary Search Tree (BST).
 /// @tparam T The data type stored in the BST.
 template <typename T>
 class BSTNode
@@ -76,7 +76,7 @@ public:
 	/// @param data Data to store in the node.
 	BSTNode(T data) : data(data), left(nullptr), right(nullptr) {}
 
-	/// @brief Insert a node underneath this one in the tree.
+	/// @brief Insert a node underneath this one on the tree.
 	/// @param data Data to insert into the tree.
 	virtual void insert(T data)
 	{
@@ -191,7 +191,7 @@ public:
 		return root;
 	}
 
-	/// @brief Insert an item into this BST.
+	/// @brief Insert an item onto this BST.
 	/// @param data Data item to insert.
 	virtual void insert(T data)
 	{
@@ -207,7 +207,7 @@ public:
 		}
 	}
 
-	/// @brief Search for an item in this BST.
+	/// @brief Search for an item on this BST.
 	/// @param data The item to search for.
 	/// @return Indicates whether the item was found.
 	bool contains(T data)
