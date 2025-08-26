@@ -1,8 +1,8 @@
 #ifndef __BSTTEST_HPP__
 #define __BSTTEST_HPP__
 
-#include "../bst.hpp"
-#include <cassert>
+#include "../bst.hpp" // for BST
+#include <cassert>	  // for assert
 
 namespace BSTTest
 {
