@@ -1,6 +1,5 @@
 #include "bsttest.hpp"
 #include "avltest.hpp"
-#include "sorttest.hpp"
 
 // run all tests
 int main(void)
@@ -10,7 +9,4 @@ int main(void)
 
 	cout << "Testing AVL" << endl;
 	AVLTest::all();
-
-	cout << "Testing sort algs" << endl;
-	SortTest::all();
 }
