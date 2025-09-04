@@ -32,16 +32,22 @@ Most of the header files from this repository should be able to be moved around 
 
 ## Modules
 
-### `bst.hpp`
+### 1. BST Module (`bst.hpp`)
 
-Define the `BSTNode` and `BST` classes and their methods.
+Define the `BSTNode` and `BST` class templates and their methods.
 
-### `avl.hpp`
+### 2. AVL Module (`avl.hpp`)
 
-Defines the `AVL` class and its methods.
+**Requires `bst.hpp`.**
+
+Defines the `AVL` class template and its methods.
+
+### 3. BTree Module (`btree.hpp`)
+
+Defines the `BTreeNode` and `BTree` class templates and their methods.
 
 ## Dependencies
 
 The following dependent relationships exist between the modules in this repository.
 
-- `avl.hpp` depends on `bst.hpp`.
+- `avl.hpp` depends on `bst.hpp` since the `AVL` class extends the `BST` class.
