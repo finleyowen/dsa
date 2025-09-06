@@ -50,4 +50,4 @@ Defines the `BTreeNode` and `BTree` class templates and their methods.
 
 The following dependent relationships exist between the modules in this repository.
 
-- `avl.hpp` depends on `bst.hpp` since the `AVL` class extends the `BST` class.
+- `avl.hpp` depends on `bst.hpp` since the `AVL` class template extends the `BST` class template.
