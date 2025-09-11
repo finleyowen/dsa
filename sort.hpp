@@ -1,6 +1,9 @@
 #ifndef __SORT_HPP__
 #define __SORT_HPP__
 
+#include <cstddef>
+using namespace std;
+
 template <typename T>
 void selection_sort(T A[], size_t n)
 {
@@ -107,5 +110,54 @@ void quick_sort(T A[], size_t n)
     // free the memory occupied by the two subarrays
     delete[] left;
     delete[] right;
+}
+
+template <typename T>
+T *merge_sort(T A[], size_t n) 
+{
+    if(n <= 1) {
+        // already sorted; copy the element if there is one and return an array 
+        T *sorted = new T[n];
+        if(n > 0) {
+            sorted[0] = A[0];
+        }
+        return sorted;
+    }
+
+    size_t n_left = n / 2,
+        n_right = n - n_left;
+
+    T *left = merge_sort(A, n_left);
+    T *right = merge_sort(A + n_left, n_right);
+    
+    T *sorted = new T[n];
+
+    size_t i = 0, j = 0;
+
+    while (i < n_left && j < n_right) {
+        if(left[i] < right[j]) {
+            sorted[i + j] = left[i];
+            i ++;
+        } else {
+            sorted[i + j] = right[j];
+            j ++;
+        }
+    }
+
+    while(i < n_left) {
+        sorted[i + j] = left[i];
+        i ++;
+    }
+
+    
+    while(j < n_right) {
+        sorted[i + j] = right[j];
+        j ++;
+    }
+
+    delete[] left;
+    delete[] right;
+
+    return sorted;
 }
 #endif

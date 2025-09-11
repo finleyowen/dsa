@@ -32,17 +32,21 @@ Most of the header files from this repository should be able to be moved around 
 
 ## Modules
 
-### 1. BST Module (`bst.hpp`)
+### 1. Sort Module (`sort.hpp`)
+
+Defines several different sorting algorithms for C-style arrays.
+
+### 2. BST Module (`bst.hpp`)
 
 Define the `BSTNode` and `BST` class templates and their methods.
 
-### 2. AVL Module (`avl.hpp`)
+### 3. AVL Module (`avl.hpp`)
 
 **Requires `bst.hpp`.**
 
 Defines the `AVL` class template and its methods.
 
-### 3. BTree Module (`btree.hpp`)
+### 4. BTree Module (`btree.hpp`)
 
 Defines the `BTreeNode` and `BTree` class templates and their methods.
 
